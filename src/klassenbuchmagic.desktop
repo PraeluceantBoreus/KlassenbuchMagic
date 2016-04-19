@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=klassenbuchmagic
 Name[ca]=klassenbuchmagic
@@ -29,7 +30,7 @@ Name[uk]=klassenbuchmagic
 Name[x-test]=xxklassenbuchmagicxx
 Name[zh_TW]=klassenbuchmagic
 Exec=klassenbuchmagic
-Icon=klassenbuchmagic
+Icon=addressbook
 Type=Application
 X-DocPath=klassenbuchmagic/index.html
 GenericName=A KDE Application
