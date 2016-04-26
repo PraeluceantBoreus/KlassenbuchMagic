@@ -37,10 +37,11 @@ Schueler::~Schueler()
 
 Schueler& Schueler::operator=(const Schueler& other)
 {
-
+  Schueler s;
+  return s;
 }
 
 bool Schueler::operator==(const Schueler& other) const
 {
-
+  return false;
 }
