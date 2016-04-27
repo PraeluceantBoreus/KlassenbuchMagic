@@ -23,14 +23,18 @@
 #define DEF_VN Max
 #define DEF_NN Mustermann
 
-Schueler::Schueler()
+Schueler::Schueler(string nummer, string vorname, string nachname)
 {
-
+  this->setNummer(nummer);
+  this->setVorname(vorname);
+  this->setNachname(nachname);
+  created = true;
 }
+
 
 Schueler::Schueler(const Schueler& other)
 {
-
+  Schueler(other.getNummer(), other.getVorname(), other.getNachname());
 }
 
 Schueler::~Schueler()
@@ -40,13 +44,12 @@ Schueler::~Schueler()
 
 Schueler& Schueler::operator=(const Schueler& other)
 {
-  Schueler s;
-  return s;
+  return Schueler(other.getNummer(), other.getVorname(), other.getNachname());;
 }
 
 bool Schueler::operator==(const Schueler& other) const
 {
-  return false;
+  return (this->getNummer() == other.getNummer()) && (this->getVorname() == other.getVorname()) && (this->getNachname() == other.getNachname());
 }
 
 string Schueler::getNachname()

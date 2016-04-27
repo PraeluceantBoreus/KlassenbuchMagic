@@ -28,7 +28,7 @@ using namespace std;
 class Schueler
 {
 public:
-    Schueler();
+    Schueler(string nummer, string vorname, string nachname);
     Schueler(const Schueler& other);
     ~Schueler();
     Schueler& operator=(const Schueler& other);
