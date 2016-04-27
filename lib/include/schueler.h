@@ -36,10 +36,14 @@ public:
     string getNummer();
     string getNachname();
     string getVorname();
+    bool setNummer(string nummer);
+    bool setNachname(string nachname);
+    bool setVorname(string vorname);
 private:
     string nummer;
     string nachname;
     string vorname;
+    bool created = false;
 };
 
 #endif // SCHUELER_H

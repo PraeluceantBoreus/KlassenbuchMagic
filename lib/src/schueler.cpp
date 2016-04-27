@@ -19,6 +19,9 @@
  */
 
 #include "../include/schueler.h"
+#define DEF_NR mus00000
+#define DEF_VN Max
+#define DEF_NN Mustermann
 
 Schueler::Schueler()
 {
@@ -59,5 +62,47 @@ string Schueler::getNummer()
 string Schueler::getVorname()
 {
   return vorname;
+}
+
+bool Schueler::setNachname(string nachname)
+{
+  if(!nachname.empty())
+  {
+    this->nachname = nachname;
+    return true;
+  }
+  if(!created)
+  {
+    this->nachname = DEF_NN;
+  }
+  return false;
+}
+
+bool Schueler::setNummer(string nummer)
+{
+  if(!nummer.empty())
+  {
+    this->nummer = nummer;
+    return true;
+  }
+  if(!created)
+  {
+    this->nummer = DEF_NR;
+  }
+  return false;
+}
+
+bool Schueler::setVorname(string vorname)
+{
+  if(!vorname.empty())
+  {
+    this->vorname = vorname;
+    return true;
+  }
+  if(!created)
+  {
+    this->vorname = DEF_VN;
+  }
+  return false;
 }
 
