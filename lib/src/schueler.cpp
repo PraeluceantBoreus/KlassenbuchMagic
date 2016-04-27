@@ -45,3 +45,19 @@ bool Schueler::operator==(const Schueler& other) const
 {
   return false;
 }
+
+string Schueler::getNachname()
+{
+  return nachname;
+}
+
+string Schueler::getNummer()
+{
+  return nummer;
+}
+
+string Schueler::getVorname()
+{
+  return vorname;
+}
+

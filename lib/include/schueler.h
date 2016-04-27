@@ -33,6 +33,9 @@ public:
     ~Schueler();
     Schueler& operator=(const Schueler& other);
     bool operator==(const Schueler& other) const;
+    string getNummer();
+    string getNachname();
+    string getVorname();
 private:
     string nummer;
     string nachname;
