@@ -45,3 +45,21 @@ bool Klasse::operator==(const Klasse& other) const
 {
   return false;
 }
+
+string Klasse::getBezeichnung()
+{
+  return bezeichnung;
+}
+
+vector< Schueler > Klasse::getSchuelers()
+{
+  return schueler;
+}
+
+void Klasse::addSchueler(Schueler& schueler)
+{
+  getSchuelers().
+}
+
+
+

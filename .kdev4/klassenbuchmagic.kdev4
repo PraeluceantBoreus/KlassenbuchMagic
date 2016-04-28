@@ -14,6 +14,11 @@ Environment Profile=
 Extra Arguments=
 Install Directory=file:///usr/local
 
+[CustomDefinesAndIncludes][ProjectPath0]
+Defines=\x00\x00\x00\x00
+Includes=\x00\x00\x00\x01\x00\x00\x00 \x00/\x00u\x00s\x00r\x00/\x00i\x00n\x00c\x00l\x00u\x00d\x00e\x00/\x00q\x00t\x00/
+Path=.
+
 [Defines And Includes][Compiler]
 Name=GCC
 Path=gcc
