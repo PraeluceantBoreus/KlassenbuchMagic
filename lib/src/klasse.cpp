@@ -20,9 +20,10 @@
 
 #include "../include/klasse.h"
 
-Klasse::Klasse()
+Klasse::Klasse(string bezeichnung)
 {
-
+  setBezeichnung(bezeichnung);
+  created = true;
 }
 
 Klasse::Klasse(const Klasse& other)
@@ -33,17 +34,6 @@ Klasse::Klasse(const Klasse& other)
 Klasse::~Klasse()
 {
 
-}
-
-Klasse& Klasse::operator=(const Klasse& other)
-{
-  Klasse k;
-  return k;
-}
-
-bool Klasse::operator==(const Klasse& other) const
-{
-  return false;
 }
 
 string Klasse::getBezeichnung()
@@ -59,6 +49,18 @@ vector< Schueler > Klasse::getSchuelers()
 void Klasse::addSchueler(Schueler& schueler)
 {
   //getSchuelers().insert(schueler);
+}
+
+bool Klasse::setBezeichnung(string bezeichnung)
+{
+  if(!bezeichnung.empty())
+  {
+    this->bezeichnung = bezeichnung;
+    return true;
+  }
+  if(!created)
+    setBezeichnung("1AHIF");
+  return false;
 }
 
 

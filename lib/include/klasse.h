@@ -30,7 +30,7 @@ using namespace std;
 class Klasse
 {
 public:
-    Klasse();
+    Klasse(string bezeichnung);
     Klasse(const Klasse& other);
     ~Klasse();
     Klasse& operator=(const Klasse& other);
@@ -38,8 +38,10 @@ public:
     string getBezeichnung();
     vector< Schueler > getSchuelers();
     void addSchueler(Schueler& schueler);
+    bool setBezeichnung(string bezeichnung);
 private:
     string bezeichnung;
+    bool created = false;
     vector<Schueler> schueler;
 };
 

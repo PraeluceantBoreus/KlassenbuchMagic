@@ -23,6 +23,9 @@
 
 #include "klasse.h"
 #include <QtGui/QImage>
+#include <iostream>
+
+using namespace std;
 
 class Klassenbuchseite
 {
@@ -34,7 +37,7 @@ public:
     bool operator==(const Klassenbuchseite& other) const;
 private:
     QImage bild;
-    Klasse klasse;
+    Klasse *klasse;
 };
 
 #endif // KLASSENBUCHSEITE_H
