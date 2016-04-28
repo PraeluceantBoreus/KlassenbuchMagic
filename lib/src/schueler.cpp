@@ -34,7 +34,7 @@ Schueler::Schueler(string nummer, string vorname, string nachname)
 
 Schueler::Schueler(const Schueler& other)
 {
-  Schueler(other.getNummer(), other.getVorname(), other.getNachname());
+  Schueler(other.nummer, other.vorname, other.nachname);
 }
 
 Schueler::~Schueler()
@@ -44,7 +44,7 @@ Schueler::~Schueler()
 
 Schueler& Schueler::operator=(const Schueler& other)
 {
-  return Schueler(other.getNummer(), other.getVorname(), other.getNachname());;
+  return Schueler(other.nummer, other.vorname, other.nachname);
 }
 
 bool Schueler::operator==(const Schueler& other) const
