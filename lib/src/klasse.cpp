@@ -26,10 +26,6 @@ Klasse::Klasse(string bezeichnung)
   created = true;
 }
 
-Klasse::Klasse(const Klasse& other)
-{
-
-}
 
 Klasse::~Klasse()
 {
@@ -41,14 +37,14 @@ string Klasse::getBezeichnung()
   return bezeichnung;
 }
 
-vector< Schueler > Klasse::getSchuelers()
+map<int, Schueler*> Klasse::getSchuelers()
 {
   return schueler;
 }
 
-void Klasse::addSchueler(Schueler& schueler)
+void Klasse::addSchueler(Schueler* schueler, int katalognummer)
 {
-  //getSchuelers().insert(schueler);
+  getSchuelers()[katalognummer] = schueler;
 }
 
 bool Klasse::setBezeichnung(string bezeichnung)
