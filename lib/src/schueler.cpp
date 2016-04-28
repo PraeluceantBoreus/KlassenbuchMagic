@@ -108,4 +108,3 @@ bool Schueler::setVorname(string vorname)
   }
   return false;
 }
-

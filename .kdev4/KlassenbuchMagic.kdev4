@@ -1,18 +1,15 @@
-[Buildset]
-BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00 \x00K\x00l\x00a\x00s\x00s\x00e\x00n\x00b\x00u\x00c\x00h\x00M\x00a\x00g\x00i\x00c)
-
 [CMake]
 Build Directory Count=1
 Current Build Directory Index=0
 ProjectRootRelative=./
 
 [CMake][CMake Build Directory 0]
-Build Directory Path=file:///home/richi/projects/klassenbuchmagic/build
+Build Directory Path=file:///home/dennis/KlassenbuchMagic/build
 Build Type=Debug
 CMake Binary=file:///usr/bin/cmake
 Environment Profile=
 Extra Arguments=
-Install Directory=file:///usr/local
+Install Directory=
 
 [CustomDefinesAndIncludes][ProjectPath0]
 Defines=\x00\x00\x00\x00
@@ -36,11 +33,8 @@ Type=Native Application
 [Launch][Launch Configuration 0][Data]
 Configured from ProjectItem=KlassenbuchMagic,src,klassenbuchmagic
 Project Target=KlassenbuchMagic,src,klassenbuchmagic
-Working Directory=file:///home/richi/projects/klassenbuchmagic/build/src/
+Working Directory=file:///home/dennis/KlassenbuchMagic/build/src/
 isExecutable=false
 
 [Project]
 VersionControlSupport=kdevgit
-
-[SourceFileTemplates]
-LastUsedTemplate=/home/richi/.kde4/share/apps/kdevfiletemplates/template_descriptions/cpp_basic.desktop

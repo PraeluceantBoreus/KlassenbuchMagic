@@ -35,6 +35,9 @@ public:
     ~Klasse();
     Klasse& operator=(const Klasse& other);
     bool operator==(const Klasse& other) const;
+    string getBezeichnung();
+    vector< Schueler > getSchuelers();
+    void addSchueler(Schueler& schueler);
 private:
     string bezeichnung;
     vector<Schueler> schueler;
