@@ -15,6 +15,7 @@ target_link_libraries( klassenbuchmagic
     KF5::I18n
     KF5::XmlGui
     KF5::ConfigWidgets
+    libklassenbuchmagic
 )
 
 install( TARGETS klassenbuchmagic ${INSTALL_TARGETS_DEFAULT_ARGS} )

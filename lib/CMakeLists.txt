@@ -16,4 +16,9 @@ add_library(libklassenbuchmagic SHARED ${libsrc})
 
 target_link_libraries(libklassenbuchmagic Qt5::Widgets)
 
-install_targets(libklassenbuchmagic libklassenbuchmagic)
+install (
+TARGETS libklassenbuchmagic
+ARCHIVE DESTINATION lib
+LIBRARY DESTINATION lib
+
+)
