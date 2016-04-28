@@ -58,7 +58,7 @@ vector< Schueler > Klasse::getSchuelers()
 
 void Klasse::addSchueler(Schueler& schueler)
 {
-  getSchuelers().insert(schueler);
+  //getSchuelers().insert(schueler);
 }
 
 

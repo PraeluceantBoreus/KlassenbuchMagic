@@ -32,7 +32,7 @@ public:
     Schueler(const Schueler& other);
     ~Schueler();
     Schueler& operator=(const Schueler& other);
-    bool operator==(const Schueler& other) const;
+    bool operator==(const Schueler& other);
     string getNummer();
     string getNachname();
     string getVorname();
