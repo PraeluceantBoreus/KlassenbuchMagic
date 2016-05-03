@@ -51,7 +51,7 @@ void KlassenbuchMagicView::slotSettingsChanged()
     m_ui.templateLabel->setPalette( palette );
 
     // i18n : internationalization
-    m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
+    m_ui.templateLabel->setText( i18n("Klassenbuch~Magic!") );
     emit signalChangeStatusbar( i18n("Settings changed") );
 }
 
