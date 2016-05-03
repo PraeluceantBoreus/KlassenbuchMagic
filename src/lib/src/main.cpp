@@ -18,17 +18,6 @@
  *
  */
 
-#ifndef MAIN_H
-#define MAIN_H
-#include "klasse.h"
-#include <iostream>
+#include "include/main.h"
 
-using namespace std;
 
-class main
-{
-public:
-  static Klasse* bspKlasse();
-};
-
-#endif // MAIN_H

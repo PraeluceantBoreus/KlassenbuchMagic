@@ -59,5 +59,11 @@ bool Klasse::setBezeichnung(string bezeichnung)
   return false;
 }
 
-
+Klasse* Klasse::bspKlasse()
+{
+  Klasse* k = new Klasse("3AHIF");
+  k->addSchueler(new Schueler("tot16938", "Dennis", "Toth"), 20);
+  k->addSchueler(new Schueler("sto16373", "Richard", "Stöckl"), 19);
+  return k;
+}
 
