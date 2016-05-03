@@ -25,23 +25,8 @@ Klassenbuchseite::Klassenbuchseite()
 
 }
 
-Klassenbuchseite::Klassenbuchseite(const Klassenbuchseite& other)
-{
-
-}
 
 Klassenbuchseite::~Klassenbuchseite()
 {
 
-}
-
-Klassenbuchseite& Klassenbuchseite::operator=(const Klassenbuchseite& other)
-{
-  Klassenbuchseite k;
-  return k;
-}
-
-bool Klassenbuchseite::operator==(const Klassenbuchseite& other) const
-{
-  return false;
 }

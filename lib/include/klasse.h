@@ -23,24 +23,26 @@
 
 #include <iostream>
 #include "schueler.h"
-#include <vector>
+#include <map>
 
 using namespace std;
 
 class Klasse
 {
 public:
-    Klasse();
+    Klasse(string bezeichnung);
     Klasse(const Klasse& other);
     ~Klasse();
     Klasse& operator=(const Klasse& other);
     bool operator==(const Klasse& other) const;
     string getBezeichnung();
-    vector< Schueler > getSchuelers();
-    void addSchueler(Schueler& schueler);
+    std::map< int, Schueler* > getSchuelers();
+    void addSchueler(Schueler* schueler, int katalognummer);
+    bool setBezeichnung(string bezeichnung);
 private:
     string bezeichnung;
-    vector<Schueler> schueler;
+    bool created = false;
+    map<int, Schueler*> schueler;
 };
 
 #endif // KLASSE_H

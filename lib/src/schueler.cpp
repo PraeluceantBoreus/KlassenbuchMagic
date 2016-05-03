@@ -20,14 +20,18 @@
 
 #include "../include/schueler.h"
 
-Schueler::Schueler()
+Schueler::Schueler(string nummer, string vorname, string nachname)
 {
-
+  this->setNummer(nummer);
+  this->setVorname(vorname);
+  this->setNachname(nachname);
+  created = true;
 }
+
 
 Schueler::Schueler(const Schueler& other)
 {
-
+  Schueler(other.nummer, other.vorname, other.nachname);
 }
 
 Schueler::~Schueler()
@@ -35,25 +39,9 @@ Schueler::~Schueler()
 
 }
 
-Schueler& Schueler::operator=(const Schueler& other)
-{
-  Schueler s;
-  return s;
-}
-
-bool Schueler::operator==(const Schueler& other) const
-{
-  return false;
-}
-
 string Schueler::getNachname()
 {
   return nachname;
-}
-
-string Schueler::getVorname()
-{
-  return vorname;
 }
 
 string Schueler::getNummer()
@@ -61,5 +49,49 @@ string Schueler::getNummer()
   return nummer;
 }
 
+string Schueler::getVorname()
+{
+  return vorname;
+}
 
+bool Schueler::setNachname(string nachname)
+{
+  if(!nachname.empty())
+  {
+    this->nachname = nachname;
+    return true;
+  }
+  if(!created)
+  {
+    this->nachname = "Mustermann";
+  }
+  return false;
+}
 
+bool Schueler::setNummer(string nummer)
+{
+  if(!nummer.empty())
+  {
+    this->nummer = nummer;
+    return true;
+  }
+  if(!created)
+  {
+    this->nummer = "mus00000";
+  }
+  return false;
+}
+
+bool Schueler::setVorname(string vorname)
+{
+  if(!vorname.empty())
+  {
+    this->vorname = vorname;
+    return true;
+  }
+  if(!created)
+  {
+    this->vorname = "Max";
+  }
+  return false;
+}

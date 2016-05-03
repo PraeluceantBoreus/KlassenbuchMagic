@@ -20,30 +20,16 @@
 
 #include "../include/klasse.h"
 
-Klasse::Klasse()
+Klasse::Klasse(string bezeichnung)
 {
-
+  setBezeichnung(bezeichnung);
+  created = true;
 }
 
-Klasse::Klasse(const Klasse& other)
-{
-
-}
 
 Klasse::~Klasse()
 {
 
-}
-
-Klasse& Klasse::operator=(const Klasse& other)
-{
-  Klasse k;
-  return k;
-}
-
-bool Klasse::operator==(const Klasse& other) const
-{
-  return false;
 }
 
 string Klasse::getBezeichnung()
@@ -51,14 +37,26 @@ string Klasse::getBezeichnung()
   return bezeichnung;
 }
 
-vector< Schueler > Klasse::getSchuelers()
+map<int, Schueler*> Klasse::getSchuelers()
 {
   return schueler;
 }
 
-void Klasse::addSchueler(Schueler& schueler)
+void Klasse::addSchueler(Schueler* schueler, int katalognummer)
 {
-  getSchuelers().insert(schueler);
+  getSchuelers()[katalognummer] = schueler;
+}
+
+bool Klasse::setBezeichnung(string bezeichnung)
+{
+  if(!bezeichnung.empty())
+  {
+    this->bezeichnung = bezeichnung;
+    return true;
+  }
+  if(!created)
+    setBezeichnung("1AHIF");
+  return false;
 }
 
 

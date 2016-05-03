@@ -28,18 +28,22 @@ using namespace std;
 class Schueler
 {
 public:
-    Schueler();
+    Schueler(string nummer, string vorname, string nachname);
     Schueler(const Schueler& other);
     ~Schueler();
     Schueler& operator=(const Schueler& other);
-    bool operator==(const Schueler& other) const;
+    bool operator==(const Schueler& other);
+    string getNummer();
     string getNachname();
     string getVorname();
-    string getNummer();
+    bool setNummer(string nummer);
+    bool setNachname(string nachname);
+    bool setVorname(string vorname);
 private:
     string nummer;
     string nachname;
     string vorname;
+    bool created = false;
 };
 
 #endif // SCHUELER_H
