@@ -25,6 +25,5 @@ find_package(KF5 REQUIRED COMPONENTS
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 add_subdirectory(doc)
-add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)

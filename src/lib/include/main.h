@@ -18,31 +18,14 @@
  *
  */
 
-#ifndef KLASSE_H
-#define KLASSE_H
-
-#include <iostream>
-#include "schueler.h"
-#include <map>
+#ifndef MAIN_H
+#define MAIN_H
 
 using namespace std;
 
-class Klasse
+class main
 {
-public:
-    Klasse(string bezeichnung);
-    Klasse(const Klasse& other);
-    ~Klasse();
-    Klasse& operator=(const Klasse& other);
-    bool operator==(const Klasse& other) const;
-    string getBezeichnung();
-    std::map< int, Schueler* > getSchuelers();
-    void addSchueler(Schueler* schueler, int katalognummer);
-    bool setBezeichnung(string bezeichnung);
-private:
-    string bezeichnung;
-    bool created = false;
-    map<int, Schueler*> schueler;
+
 };
 
-#endif // KLASSE_H
+#endif // MAIN_H

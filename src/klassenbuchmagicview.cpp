@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "klassenbuchmagicview.h"
 #include "KlassenbuchMagicSettings.h"
+#include "klasse.h"
 
 KlassenbuchMagicView::KlassenbuchMagicView(QWidget *parent)
     : QWidget(parent)
@@ -51,6 +52,7 @@ void KlassenbuchMagicView::slotSettingsChanged()
     m_ui.templateLabel->setPalette( palette );
 
     // i18n : internationalization
+    Klasse::bspKlasse();
     m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
     emit signalChangeStatusbar( i18n("Settings changed") );
 }

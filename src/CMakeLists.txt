@@ -9,12 +9,17 @@ ki18n_wrap_ui(klassenbuchmagic_SRCS klassenbuchmagicViewBase.ui settingsBase.ui)
 
 add_executable( klassenbuchmagic ${klassenbuchmagic_SRCS} )
 
+add_subdirectory(lib)
+include_directories(lib/include)
+link_directories(lib)
+
 target_link_libraries( klassenbuchmagic
     Qt5::Widgets
     KF5::CoreAddons
     KF5::I18n
     KF5::XmlGui
     KF5::ConfigWidgets
+    KlbMagic
 )
 
 install( TARGETS klassenbuchmagic ${INSTALL_TARGETS_DEFAULT_ARGS} )
