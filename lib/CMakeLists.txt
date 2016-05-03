@@ -6,14 +6,12 @@ set(libsrc
   src/klasse.cpp
   src/klassenbuchseite.cpp)
 
-project(libklassenbuchmagic)
+project(KlbMagic)
 set(CMAKE_BUILD_TYPE Release)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-add_library(libklassenbuchmagic SHARED ${libsrc})
+add_library(KlbMagic SHARED ${libsrc})
 
-target_link_libraries(libklassenbuchmagic Qt5::Widgets)
-
-install_targets(libklassenbuchmagic libklassenbuchmagic)
+target_link_libraries(KlbMagic Qt5::Widgets)
