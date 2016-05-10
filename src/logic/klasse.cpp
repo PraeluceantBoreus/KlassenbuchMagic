@@ -63,9 +63,14 @@ bool Klasse::setBezeichnung(string bezeichnung)
 Klasse* Klasse::bspKlasse()
 {
   Klasse* k = new Klasse("3AHIF");
-  Schueler* t = new Schueler("tot16938", "Dennis", "Toth");
-  k->addSchueler(t, 20);
-  k->addSchueler(new Schueler("sto16373", "Richard", "Stöckl"), 19);
+  string nummern [] = {"tot16398", "sto16373", "sch16344", "san16333"};
+  string vornamen [] = {"Dennis", "Richard", "Guido", "Luca"};
+  string nachnamen [] = {"Toth", "Stöckl", "Schreier", "Sanda"};
+  int i = 0;
+  for(string s : nummern) {
+    k->addSchueler(new Schueler(nummern[i], vornamen[i], nachnamen[i]), i+19);
+    i++;
+  }
   return k;
 }
 
