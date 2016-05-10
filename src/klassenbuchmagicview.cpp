@@ -21,11 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "klassenbuchmagicview.h"
 #include "KlassenbuchMagicSettings.h"
 #include <iostream>
-/*#include "lib/include/klasse.h"
-#include "lib/include/schueler.h"*/
-//#include "klasse.h"
 
 using namespace std;
+#include "logic/klasse.h"
 
 KlassenbuchMagicView::KlassenbuchMagicView(QWidget *parent)
     : QWidget(parent)
@@ -60,10 +58,11 @@ void KlassenbuchMagicView::slotSettingsChanged()
     m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
     for(int i = 0; i < 50; i++)
     m_ui.schuelerList->addItem("sdfsdf");
-    /*Klasse* k = main::bspKlasse();
+    Klasse* k = main::bspKlasse();
     m_ui.schuelerList->addItem(k->getSchuelers()[19].getNachname()+k->getSchuelers()[19].getVorname());
     m_ui.schuelerList->addItem(k->getSchuelers()[20].getNachname()+k->getSchuelers()[20].getVorname());*/
     emit signalChangeStatusbar( i18n("Settings changed") );
+    m_ui.templateLabel->setText( i18n("Klassenbuch~Magic!") );
 }
 
 #include "klassenbuchmagicview.moc"

@@ -18,80 +18,65 @@
  *
  */
 
-#include "../include/schueler.h"
+#include "klasse.h"
+#include <iostream>
 
-Schueler::Schueler(string nummer, string vorname, string nachname)
+Klasse::Klasse(string bezeichnung)
 {
-  this->setNummer(nummer);
-  this->setVorname(vorname);
-  this->setNachname(nachname);
+  setBezeichnung(bezeichnung);
   created = true;
 }
 
 
-Schueler::Schueler(const Schueler& other)
-{
-  Schueler(other.nummer, other.vorname, other.nachname);
-}
-
-Schueler::~Schueler()
+Klasse::~Klasse()
 {
 
 }
 
-string Schueler::getNachname()
+string Klasse::getBezeichnung()
 {
-  return nachname;
+  return bezeichnung;
 }
 
-string Schueler::getNummer()
+map<int, Schueler*> Klasse::getSchuelers()
 {
-  return nummer;
+  return schueler;
 }
 
-string Schueler::getVorname()
+void Klasse::addSchueler(Schueler* schueler, int katalognummer)
 {
-  return vorname;
+  getSchuelers()[katalognummer] = schueler;
 }
 
-bool Schueler::setNachname(string nachname)
+bool Klasse::setBezeichnung(string bezeichnung)
 {
-  if(!nachname.empty())
+  if(!bezeichnung.empty())
   {
-    this->nachname = nachname;
+    this->bezeichnung = bezeichnung;
     return true;
   }
   if(!created)
-  {
-    this->nachname = "Mustermann";
-  }
+    setBezeichnung("1AHIF");
   return false;
 }
 
-bool Schueler::setNummer(string nummer)
+Klasse* Klasse::bspKlasse()
 {
-  if(!nummer.empty())
-  {
-    this->nummer = nummer;
-    return true;
+  Klasse* k = new Klasse("3AHIF");
+  string nummern [] = {"tot16398", "sto16373", "sch16344", "san16333"};
+  string vornamen [] = {"Dennis", "Richard", "Guido", "Luca"};
+  string nachnamen [] = {"Toth", "Stöckl", "Schreier", "Sanda"};
+  int i = 0;
+  for(string s : nummern) {
+    k->addSchueler(new Schueler(nummern[i], vornamen[i], nachnamen[i]), i+19);
+    i++;
   }
-  if(!created)
-  {
-    this->nummer = "mus00000";
-  }
-  return false;
+  return k;
 }
 
-bool Schueler::setVorname(string vorname)
+int Klasse::test()
 {
-  if(!vorname.empty())
-  {
-    this->vorname = vorname;
-    return true;
-  }
-  if(!created)
-  {
-    this->vorname = "Max";
-  }
-  return false;
+  return 4;
 }
+
+

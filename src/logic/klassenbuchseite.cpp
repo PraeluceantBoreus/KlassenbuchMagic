@@ -18,46 +18,15 @@
  *
  */
 
-#include "../include/klasse.h"
+#include "klassenbuchseite.h"
 
-Klasse::Klasse(string bezeichnung)
-{
-  setBezeichnung(bezeichnung);
-  created = true;
-}
-
-
-Klasse::~Klasse()
+Klassenbuchseite::Klassenbuchseite()
 {
 
 }
 
-string Klasse::getBezeichnung()
+
+Klassenbuchseite::~Klassenbuchseite()
 {
-  return bezeichnung;
+
 }
-
-map<int, Schueler*> Klasse::getSchuelers()
-{
-  return schueler;
-}
-
-void Klasse::addSchueler(Schueler* schueler, int katalognummer)
-{
-  getSchuelers()[katalognummer] = schueler;
-}
-
-bool Klasse::setBezeichnung(string bezeichnung)
-{
-  if(!bezeichnung.empty())
-  {
-    this->bezeichnung = bezeichnung;
-    return true;
-  }
-  if(!created)
-    setBezeichnung("1AHIF");
-  return false;
-}
-
-
-
