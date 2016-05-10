@@ -28,6 +28,11 @@ Schueler::Schueler(string nummer, string vorname, string nachname)
   created = true;
 }
 
+Schueler::Schueler(){
+  this->setNummer("bau16000");
+  this->setVorname("Pflanze");
+  this->setNachname("Baum");
+}
 
 Schueler::Schueler(const Schueler& other)
 {

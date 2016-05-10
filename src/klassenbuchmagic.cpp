@@ -62,7 +62,10 @@ void KlassenbuchMagic::settingsConfigure()
     KConfigDialog *dialog = new KConfigDialog(this, "settings", KlassenbuchMagicSettings::self());
     QWidget *generalSettingsDialog = new QWidget;
     settingsBase.setupUi(generalSettingsDialog);
+    QWidget *viewSettingsDialog = new QWidget;
+    settingsView.setupUi(viewSettingsDialog);
     dialog->addPage(generalSettingsDialog, i18n("General"), "package_setting");
+    dialog->addPage(viewSettingsDialog, i18n("View"), "package_setting");
     connect( dialog, SIGNAL(settingsChanged(QString)), m_klassenbuchmagicView, SLOT(slotSettingsChanged()) );
     dialog->setAttribute( Qt::WA_DeleteOnClose );
     dialog->show();

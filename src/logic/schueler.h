@@ -29,6 +29,7 @@ class Schueler
 {
 public:
     Schueler(string nummer, string vorname, string nachname);
+    Schueler();
     Schueler(const Schueler& other);
     ~Schueler();
     Schueler& operator=(const Schueler& other);

@@ -36,7 +36,7 @@ public:
     Klasse& operator=(const Klasse& other);
     bool operator==(const Klasse& other) const;
     string getBezeichnung();
-    std::map< int, Schueler* > getSchuelers();
+    std::map< int, Schueler* >& getSchuelers();
     void addSchueler(Schueler* schueler, int katalognummer);
     bool setBezeichnung(string bezeichnung);
     static Klasse* bspKlasse();

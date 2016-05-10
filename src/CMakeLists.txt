@@ -8,7 +8,7 @@ set( klassenbuchmagic_SRCS
 )
 
 kconfig_add_kcfg_files(klassenbuchmagic_SRCS KlassenbuchMagicSettings.kcfgc)
-ki18n_wrap_ui(klassenbuchmagic_SRCS klassenbuchmagicViewBase.ui settingsBase.ui)
+ki18n_wrap_ui(klassenbuchmagic_SRCS klassenbuchmagicViewBase.ui settingsBase.ui settingsView.ui)
 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/logic/)

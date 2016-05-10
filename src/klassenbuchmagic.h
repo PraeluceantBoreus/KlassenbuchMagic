@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ui_klassenbuchmagicViewBase.h"
 #include "ui_settingsBase.h"
+#include "ui_settingsView.h"
 #include "KlassenbuchMagicSettings.h"
 #include "klassenbuchmagicview.h"
 
@@ -68,6 +69,7 @@ private:
     // this is the name of the root widget inside our Ui file
     // you can rename it in designer and then change it here
     Ui::settingsBase settingsBase;
+    Ui::settingsView settingsView;
     Ui::klassenbuchmagicViewBase klassenbuchmagicViewBase;
     QAction *m_switchAction;
     KlassenbuchMagicView *m_klassenbuchmagicView;

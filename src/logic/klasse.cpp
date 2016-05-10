@@ -38,14 +38,17 @@ string Klasse::getBezeichnung()
   return bezeichnung;
 }
 
-map<int, Schueler*> Klasse::getSchuelers()
+map<int, Schueler*>& Klasse::getSchuelers()
 {
   return schueler;
 }
 
 void Klasse::addSchueler(Schueler* schueler, int katalognummer)
 {
-  getSchuelers()[katalognummer] = schueler;
+  int size = getSchuelers().size();
+  //getSchuelers()[katalognummer] = schueler;
+  getSchuelers().insert(make_pair(katalognummer, schueler));
+  int size2 = getSchuelers().size();
 }
 
 bool Klasse::setBezeichnung(string bezeichnung)
@@ -67,9 +70,11 @@ Klasse* Klasse::bspKlasse()
   string vornamen [] = {"Dennis", "Richard", "Guido", "Luca"};
   string nachnamen [] = {"Toth", "Stöckl", "Schreier", "Sanda"};
   int i = 0;
+  int baum = 0;
   for(string s : nummern) {
     k->addSchueler(new Schueler(nummern[i], vornamen[i], nachnamen[i]), i+19);
     i++;
+    baum = k->getSchuelers().size();
   }
   return k;
 }
