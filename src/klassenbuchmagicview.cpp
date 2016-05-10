@@ -53,10 +53,10 @@ void KlassenbuchMagicView::slotSettingsChanged()
     QPalette palette;
     palette.setColor( QPalette::Window, KlassenbuchMagicSettings::color_background());
     palette.setColor( QPalette::WindowText, KlassenbuchMagicSettings::color_foreground());
-    m_ui.templateLabel->setPalette( palette );
+    //m_ui.templateLabel->setPalette( palette );
 
     // i18n : internationalization
-    m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
+    //m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
     Klasse* k = Klasse::bspKlasse();
 
     m_ui.schuelerList->clear();
@@ -68,7 +68,6 @@ void KlassenbuchMagicView::slotSettingsChanged()
       m_ui.schuelerList->addItem(name);
     }
     emit signalChangeStatusbar( i18n("Settings changed") );
-    m_ui.templateLabel->setText( i18n("Klassenbuch~Magic!") );
 }
 
 #include "klassenbuchmagicview.moc"
