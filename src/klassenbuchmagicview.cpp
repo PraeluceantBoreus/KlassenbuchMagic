@@ -58,16 +58,14 @@ void KlassenbuchMagicView::slotSettingsChanged()
     // i18n : internationalization
     m_ui.templateLabel->setText( i18n("This project is %1 days old", KlassenbuchMagicSettings::val_time()) );
     Klasse* k = Klasse::bspKlasse();
-    /*m_ui.schuelerList->addItem(k->getSchuelers()[19]->getNachname()+k->getSchuelers()[19]->getVorname());
-    m_ui.schuelerList->addItem(k->getSchuelers()[20]->getNachname()+k->getSchuelers()[20]->getVorname());*/
-    /*int numbers [] = {19, 20, 21, 22};
-    for (int i : numbers) {
-      string name = k->getSchuelers()[20]->getNachname();
-      //m_ui.schuelerList->addItem(QString::fromStdString(name));
-    }*/
+
+    m_ui.schuelerList->clear();
     for(auto& kv : k->getSchuelers()) {
-      string name = kv.second->getNachname();
-      m_ui.schuelerList->addItem(QString::fromStdString(name));
+      QString name = KlassenbuchMagicSettings::classname();
+      name.replace(QString::fromStdString("%v"), QString::fromStdString(kv.second->getVorname()));
+      name.replace(QString::fromStdString("%n"), QString::fromStdString(kv.second->getNachname()));
+      name.replace(QString::fromStdString("%s"), QString::fromStdString(kv.second->getNummer()));
+      m_ui.schuelerList->addItem(name);
     }
     emit signalChangeStatusbar( i18n("Settings changed") );
     m_ui.templateLabel->setText( i18n("Klassenbuch~Magic!") );

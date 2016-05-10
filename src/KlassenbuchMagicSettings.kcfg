@@ -17,5 +17,9 @@
 	    <label>size of a ball</label>
 	    <default>2</default>
     </entry>
+    <entry name="classname" type="String">
+        <label>display name of classmates</label>
+        <default>%v %n (%s)</default>
+    </entry>
   </group>
 </kcfg>
