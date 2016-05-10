@@ -18,15 +18,6 @@
  *
  */
 
-#include "../lib/include/klassenbuchseite.h"
-
-Klassenbuchseite::Klassenbuchseite()
-{
-
-}
+#include "main.h"
 
 
-Klassenbuchseite::~Klassenbuchseite()
-{
-
-}

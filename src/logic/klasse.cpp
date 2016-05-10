@@ -18,32 +18,60 @@
  *
  */
 
-#ifndef KLASSE_H
-#define KLASSE_H
-
+#include "klasse.h"
 #include <iostream>
-#include "schueler.h"
-#include <map>
 
-using namespace std;
-
-class Klasse
+Klasse::Klasse(string bezeichnung)
 {
-public:
-    Klasse(string bezeichnung);
-    Klasse(const Klasse& other);
-    ~Klasse();
-    Klasse& operator=(const Klasse& other);
-    bool operator==(const Klasse& other) const;
-    string getBezeichnung();
-    std::map< int, Schueler* > getSchuelers();
-    void addSchueler(Schueler* schueler, int katalognummer);
-    bool setBezeichnung(string bezeichnung);
-    static Klasse* bspKlasse();
-private:
-    string bezeichnung;
-    bool created = false;
-    map<int, Schueler*> schueler;
-};
+  setBezeichnung(bezeichnung);
+  created = true;
+}
 
-#endif // KLASSE_H
+
+Klasse::~Klasse()
+{
+
+}
+
+string Klasse::getBezeichnung()
+{
+  return bezeichnung;
+}
+
+map<int, Schueler*> Klasse::getSchuelers()
+{
+  return schueler;
+}
+
+void Klasse::addSchueler(Schueler* schueler, int katalognummer)
+{
+  getSchuelers()[katalognummer] = schueler;
+}
+
+bool Klasse::setBezeichnung(string bezeichnung)
+{
+  if(!bezeichnung.empty())
+  {
+    this->bezeichnung = bezeichnung;
+    return true;
+  }
+  if(!created)
+    setBezeichnung("1AHIF");
+  return false;
+}
+
+Klasse* Klasse::bspKlasse()
+{
+  Klasse* k = new Klasse("3AHIF");
+  Schueler* t = new Schueler("tot16938", "Dennis", "Toth");
+  k->addSchueler(t, 20);
+  k->addSchueler(new Schueler("sto16373", "Richard", "Stöckl"), 19);
+  return k;
+}
+
+int Klasse::test()
+{
+  return 4;
+}
+
+

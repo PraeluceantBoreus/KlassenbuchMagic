@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "klassenbuchmagicview.h"
 #include "KlassenbuchMagicSettings.h"
-#include "klasse.h"
+#include "logic/klasse.h"
 
 KlassenbuchMagicView::KlassenbuchMagicView(QWidget *parent)
     : QWidget(parent)
@@ -53,7 +53,9 @@ void KlassenbuchMagicView::slotSettingsChanged()
 
     // i18n : internationalization
     m_ui.templateLabel->setText( i18n("Klassenbuch~Magic!") );
-    Klasse::bspKlasse();
+    //Klasse::bspKlasse();
+    int i = Klasse::test();
+    Klasse* k = Klasse::bspKlasse();
 }
 
 #include "klassenbuchmagicview.moc"

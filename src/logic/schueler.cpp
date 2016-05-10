@@ -18,7 +18,7 @@
  *
  */
 
-#include "../include/schueler.h"
+#include "schueler.h"
 
 Schueler::Schueler(string nummer, string vorname, string nachname)
 {
